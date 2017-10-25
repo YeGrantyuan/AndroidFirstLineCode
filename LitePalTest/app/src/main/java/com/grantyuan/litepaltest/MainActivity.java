@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import com.grantyuan.litepaltest.utils.Book;
 
+import org.litepal.tablemanager.Connector;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button createDatabase;
     private Button addData;
@@ -25,7 +27,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        switch (v.getId()) {
+        switch (view.getId()) {
+            case R.id.create_database
+                Connector.getDatabase();
+                break;
             case R.id.add_database:
                 Book book = new Book();
                 book.setName("The Da Vinci code");

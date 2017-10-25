@@ -3,6 +3,7 @@ package com.grantyuan.databasetest.databaseclass;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 /**
@@ -34,7 +35,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_BOOK);
         db.execSQL(CREATE_CATEGORY);
-        Toast.makeText(mContext, "Create succeesed", Toast.LENGTH_SHORT).show();
+        Log.d(MyDatabaseHelper, "onCreate: Create database successed!");
     }
 
     @Override
